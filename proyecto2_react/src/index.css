@@ -1,0 +1,74 @@
+:root {
+  --text: #ffc1c7;
+  --text-h: #ff3b4f;
+  --bg: #050505;
+  --border: rgba(255, 59, 79, 0.32);
+  --code-bg: #131313;
+  --accent: #ff3b4f;
+  --accent-bg: rgba(255, 59, 79, 0.14);
+  --accent-border: rgba(255, 59, 79, 0.62);
+  --social-bg: rgba(255, 59, 79, 0.08);
+  --shadow:
+    rgba(255, 59, 79, 0.18) 0 0 20px, rgba(0, 0, 0, 0.45) 0 8px 18px;
+
+  --sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 17px/150% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% -8%, rgba(255, 59, 79, 0.18), transparent 32%),
+    radial-gradient(circle at 88% 0%, rgba(255, 59, 79, 0.12), transparent 28%),
+    linear-gradient(180deg, #040404 0%, #090909 48%, #101010 100%);
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-h);
+  margin: 0;
+  font-family: var(--heading);
+}
+
+p {
+  margin: 0;
+}
+

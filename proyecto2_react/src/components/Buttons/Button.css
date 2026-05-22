@@ -1,0 +1,56 @@
+.btn {
+	--btn-bg: linear-gradient(135deg, #080808 0%, #121212 100%);
+	--btn-text: #ff3b4f;
+	--btn-border: rgba(255, 59, 79, 0.6);
+	--btn-glow: rgba(255, 59, 79, 0.35);
+
+	appearance: none;
+	border: 1px solid var(--btn-border);
+	background: var(--btn-bg);
+	color: var(--btn-text);
+	padding: 0.72rem 1.2rem;
+	font-size: 0.96rem;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	border-radius: 12px;
+	cursor: pointer;
+	transition:
+		transform 0.22s ease,
+		box-shadow 0.22s ease,
+		background-color 0.22s ease,
+		color 0.22s ease;
+	box-shadow:
+		0 0 0 1px rgba(255, 59, 79, 0.2),
+		0 0 16px rgba(255, 59, 79, 0.18),
+		0 10px 18px rgba(0, 0, 0, 0.45);
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+	box-shadow:
+		0 0 0 1px rgba(255, 59, 79, 0.4),
+		0 0 22px var(--btn-glow),
+		0 14px 22px rgba(0, 0, 0, 0.52);
+}
+
+.btn:active {
+	transform: translateY(0);
+	box-shadow:
+		0 0 0 1px rgba(255, 59, 79, 0.38),
+		0 0 12px rgba(255, 59, 79, 0.3),
+		0 8px 14px rgba(0, 0, 0, 0.45);
+}
+
+.btn:focus-visible {
+	outline: 2px solid #ff3b4f;
+	outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+	.btn {
+		width: 100%;
+		max-width: 280px;
+	}
+}
