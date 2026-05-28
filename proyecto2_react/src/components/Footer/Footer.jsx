@@ -16,7 +16,7 @@ const Footer = () => {
                     <a href="#servidores" className="footer_section_link">Servidores</a>
                     <a href="#arquitectura" className="footer_section_link">Arquitectura</a>
                     <a href="#base-datos" className="footer_section_link">Base de datos</a>
-                    <a href="#orm" className="footer_section_link">ORM</a>
+                    
                 </nav>
                 <p className="h2_footer">Dónde puedes ver nuestro trabajo:</p>
                 <div className="social_links_wrapper">

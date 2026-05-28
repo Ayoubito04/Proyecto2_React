@@ -1,3 +1,65 @@
+/* --- Prisma ORM Logo Styles --- */
+.orm_logo_title {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	margin-bottom: 0.5rem;
+}
+.orm_logo {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(71, 168, 245, 0.10);
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(71, 168, 245, 0.10);
+}
+/* --- ORM (Prisma) Styles --- */
+.orm_wrapper {
+	margin-top: 2.2rem;
+	margin-bottom: 1.5rem;
+	padding: 1.3rem 1.2rem 1.2rem 1.2rem;
+	border-radius: 15px;
+	background: linear-gradient(120deg, rgba(99, 102, 241, 0.13) 0%, rgba(56, 189, 248, 0.10) 100%);
+	border: 1.5px solid rgba(99, 102, 241, 0.22);
+	box-shadow: 0 0 18px rgba(99, 102, 241, 0.10), 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.h2_orm {
+	margin: 0 0 0.7rem;
+	font-size: clamp(1.08rem, 2.3vw, 1.32rem);
+	line-height: 1.2;
+	color: #63b3ed;
+	letter-spacing: 0.01em;
+	text-shadow: 0 0 10px rgba(99, 102, 241, 0.18);
+}
+
+.p_orm {
+	margin: 0 0 0.7rem;
+	color: #e0e7ff;
+	font-size: clamp(0.95rem, 1.7vw, 1.05rem);
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+}
+
+.p_orm_secondary {
+	margin-top: 0.6rem;
+	color: #bae6fd;
+	font-size: clamp(0.92rem, 1.5vw, 1rem);
+}
+
+.orm_points {
+	margin: 0.8rem 0 0.5rem 1.1rem;
+	padding-left: 1.1rem;
+	display: grid;
+	gap: 0.38rem;
+	color: #c7d2fe;
+	font-size: clamp(0.89rem, 1.4vw, 0.98rem);
+}
+.orm_points li::marker {
+	color: #38bdf8;
+}
 main {
 	--main-bg: radial-gradient(circle at 15% 20%, rgba(255, 47, 67, 0.18), transparent 45%),
 		radial-gradient(circle at 85% 0%, rgba(255, 47, 67, 0.12), transparent 40%),

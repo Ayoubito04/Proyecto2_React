@@ -80,6 +80,10 @@ const Main=()=>{
         window.open("https://www.postgresql.org/docs/","_blank");
         //Esta función nos conducirá a la documentación oficial de PostgreSQL
     }
+    const handleDocumentationClickPrisma=()=>{
+        window.open("https://www.prisma.io/docs/","_blank");
+        //Esta función nos conducirá a la documentación oficial de Prisma ORM
+    }
 
     return(
 
@@ -343,6 +347,31 @@ const Main=()=>{
                             <p className="p_database p_database_secondary">
                                 Ademas, la estructura relacional de la base de datos nos permite establecer conexiones claras entre diferentes tipos de informacion, como usuarios, gamificaciones, sesiones o rutinas  , lo que mejora la experiencia del usuario al ofrecer una navegacion mas fluida y personalizada dentro de la aplicacion.
                             </p>
+                            {/* --- Prisma ORM --- */}
+                            <div className="orm_wrapper">
+                                <div className="orm_logo_title">
+                                    <span className="orm_logo" aria-hidden="true">
+                                        {/* Prisma ORM official white logo (triangle) */}
+                                        <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={handleDocumentationClickPrisma} style={{ cursor: "pointer" }} title="Ir a documentación de Prisma ORM">
+                                            <path d="M33.6 32.7L21.1 7.1C20.7 6.3 19.5 6.3 19.1 7.1L6.6 32.7C6.2 33.5 6.8 34.4 7.7 34.4H32.5C33.4 34.4 34 33.5 33.6 32.7Z" fill="#fff"/>
+                                        </svg>
+                                    </span>
+                                    <h2 className="h2_orm">¿Por qué usamos Prisma ORM?</h2>
+                                </div>
+                                <p className="p_orm">
+                                    Prisma ORM es una herramienta moderna que facilita la interacción entre nuestra aplicación y la base de datos PostgreSQL. Nos permite definir modelos de datos de forma sencilla y segura, generando automáticamente consultas eficientes y evitando errores comunes en el acceso a datos.
+                                </p>
+                                <ul className="orm_points">
+                                    <li>Permite escribir consultas a la base de datos usando JavaScript/TypeScript, sin necesidad de SQL manual.</li>
+                                    <li>Facilita la validación y consistencia de los datos gracias a su tipado fuerte.</li>
+                                    <li>Automatiza migraciones y cambios en la estructura de la base de datos.</li>
+                                    <li>Mejora la productividad del equipo y reduce errores en el desarrollo backend.</li>
+                                    <li>Documentación clara y comunidad activa para resolver dudas rápidamente.</li>
+                                </ul>
+                                <p className="p_orm p_orm_secondary">
+                                    Gracias a Prisma, el desarrollo de nuevas funcionalidades es más ágil y seguro, asegurando que los datos estén siempre bien estructurados y alineados con las necesidades del proyecto.
+                                </p>
+                            </div>
                         </section>
                         </div>
                     <section id="feedback" className="content_block">
