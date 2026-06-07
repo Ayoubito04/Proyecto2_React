@@ -3,8 +3,13 @@
   top: 96px;
   align-self: flex-start;
   width: 210px;
-  max-height: calc(100vh - 120px);
+  height: calc(100vh - 96px);
+  height: calc(100dvh - 96px);
+  max-height: calc(100vh - 96px);
+  max-height: calc(100dvh - 96px);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   border: 1px solid rgba(255, 59, 79, 0.28);
   border-radius: 18px;
@@ -14,25 +19,30 @@
 }
 
 .aside_title {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.4rem;
   color: #ff7380;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 .aside_sections {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.7vh, 1.05rem);
+  flex: 1;
+  min-height: 0;
+  padding: 0.75rem 0;
 }
 
 .aside_section_link {
   display: flex;
   align-items: center;
-  min-height: 38px;
-  padding: 0.42rem 0.72rem;
+  min-height: 40px;
+  padding: 0.48rem 0.78rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.06);
@@ -59,6 +69,7 @@
   .home_aside {
     position: static;
     width: min(100%, 960px);
+    height: auto;
     max-height: none;
     margin: 0 auto;
   }
@@ -67,6 +78,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.55rem;
+    flex: initial;
+    padding: 0;
   }
 
   .aside_section_link:hover {

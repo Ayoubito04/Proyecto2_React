@@ -82,3 +82,30 @@ p {
   margin: 0;
 }
 
+
+/* ─── Transición entre páginas ───────────────────────────────── */
+.page-transition {
+  width: 100%;
+  min-height: 100svh;
+  animation: pageFadeSlide 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pageFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
