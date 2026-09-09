@@ -65,6 +65,21 @@
   outline-offset: 3px;
 }
 
+/* Enlace destacado de descarga */
+.aside_section_link_cta {
+  border-color: rgba(255, 59, 79, 0.6);
+  background: rgba(255, 59, 79, 0.16);
+  color: #ffd6da;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.aside_section_link_cta:hover {
+  background: rgba(255, 59, 79, 0.28);
+  border-color: rgba(255, 115, 128, 0.85);
+}
+
 @media (max-width: 1100px) {
   .home_aside {
     position: static;

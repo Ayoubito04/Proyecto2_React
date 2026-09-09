@@ -3,6 +3,8 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import DownloadButton from "../Buttons/DownloadButton";
+import logoGoFight from "../../assets/GF Boxing Pulse Logo.png";
 import "./Header.css";
 
 const Header = () => {
@@ -22,8 +24,11 @@ const Header = () => {
     return (
         <header>
             <div className="header-brand">
-                <h1>Portafolio de GoFight</h1>
-                <p>Hecho por Ayoub y Mario</p>
+                <img src={logoGoFight} alt="Logo de GoFight" className="header-logo" />
+                <div className="header-brand-text">
+                    <h1>Portafolio de GoFight</h1>
+                    <p>Hecho por Ayoub y Mario</p>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -44,6 +49,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
+            <DownloadButton size="sm" className="header_download" />
             <div className="menu-hamburguesa" onClick={handleMenu}>
                 <div className={`linea ${isOpen ? "open" : ""}`}></div>
                 <div className={`linea ${isOpen ? "open" : ""}`}></div>

@@ -48,9 +48,94 @@
 	outline-offset: 3px;
 }
 
+/* --- Boton de descarga --- */
+.btn_download {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.55rem;
+	text-decoration: none;
+	background: linear-gradient(135deg, #ff2f43 0%, #c81026 100%);
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.28);
+	box-shadow:
+		0 0 0 1px rgba(255, 59, 79, 0.35),
+		0 0 22px rgba(255, 59, 79, 0.3),
+		0 12px 22px rgba(0, 0, 0, 0.5);
+}
+
+.btn_download:hover {
+	background: linear-gradient(135deg, #ff4557 0%, #e01530 100%);
+	border-color: rgba(255, 255, 255, 0.5);
+	box-shadow:
+		0 0 0 1px rgba(255, 59, 79, 0.5),
+		0 0 30px rgba(255, 59, 79, 0.45),
+		0 16px 26px rgba(0, 0, 0, 0.55);
+}
+
+.btn_icon {
+	width: 1.1em;
+	height: 1.1em;
+	flex: 0 0 auto;
+	transition: transform 0.22s ease;
+}
+
+.btn_download:hover .btn_icon {
+	transform: translateY(2px);
+}
+
+.btn_sm {
+	padding: 0.5rem 0.9rem;
+	font-size: 0.82rem;
+	border-radius: 10px;
+}
+
+.btn_lg {
+	padding: 1rem 2rem;
+	font-size: 1.06rem;
+	border-radius: 14px;
+	letter-spacing: 0.06em;
+}
+
+/* Pulso suave para que la llamada a la accion principal destaque */
+.btn_lg.btn_download {
+	animation: download-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes download-pulse {
+	0%,
+	100% {
+		box-shadow:
+			0 0 0 1px rgba(255, 59, 79, 0.35),
+			0 0 22px rgba(255, 59, 79, 0.28),
+			0 12px 22px rgba(0, 0, 0, 0.5);
+	}
+	50% {
+		box-shadow:
+			0 0 0 1px rgba(255, 59, 79, 0.55),
+			0 0 34px rgba(255, 59, 79, 0.5),
+			0 12px 22px rgba(0, 0, 0, 0.5);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.btn_lg.btn_download {
+		animation: none;
+	}
+
+	.btn,
+	.btn_icon {
+		transition: none;
+	}
+}
+
 @media (max-width: 768px) {
 	.btn {
 		width: 100%;
 		max-width: 280px;
+	}
+
+	.btn_sm {
+		width: auto;
 	}
 }

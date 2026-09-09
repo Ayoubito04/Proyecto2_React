@@ -40,9 +40,26 @@ header h1 {
 
 header .header-brand {
 	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.7rem;
+}
+
+header .header-brand-text {
+	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 0.15rem;
+}
+
+header .header-logo {
+	width: 46px;
+	height: 46px;
+	flex: 0 0 auto;
+	object-fit: contain;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 47, 67, 0.4);
+	background: #0a0a0a;
 }
 
 header .header-brand p {
@@ -92,6 +109,11 @@ header nav a:focus-visible {
 	outline-offset: 2px;
 	color: var(--header-text);
 	background-color: var(--header-link-hover);
+}
+
+header .header_download {
+	flex: 0 0 auto;
+	text-transform: uppercase;
 }
 
 header .menu-hamburguesa {
@@ -153,6 +175,13 @@ header .linea {
 	header .header-brand {
 		width: 100%;
 		order: 1;
+	}
+
+	/* La descarga sigue visible aunque el menu este plegado */
+	header .header_download {
+		order: 2;
+		width: auto;
+		max-width: none;
 	}
 
 	header:has(.menu-hamburguesa .linea.open) nav {

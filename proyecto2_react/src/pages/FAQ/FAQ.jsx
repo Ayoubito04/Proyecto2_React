@@ -27,7 +27,7 @@ const FAQ=()=>{
                 </div>
                 <div className={`faq-item${isOpen === 1 ? ' faq-item--open' : ''}`}>
                     <h2 onClick={() => handleFAQ(1)}>¿De cuantas tablas consta la BD de GoFight?</h2>
-                    {isOpen === 1 && <p>La base de datos de GoFight consta de 5 tablas, incluyendo tablas como la de usuarios,gamificaciones,sesiones,rutinas,ejercicios o también tablas intermedias de N:M como la de rutinas_usuarios,donde se registraba el tiempo de duración y descanso de cada uno de los ejercicios.</p>}
+                    {isOpen === 1 && <p>La base de datos de GoFight consta de 6 tablas: usuarios, ejercicios, rutinas, sesiones_historial, gamificaciones y la tabla intermedia N:M rutinas_ejercicios, donde se registra el orden, el tiempo de duración y el descanso de cada uno de los ejercicios dentro de la rutina.</p>}
                 </div>
                 <div className={`faq-item${isOpen === 2 ? ' faq-item--open' : ''}`}>
                     <h2 onClick={() => handleFAQ(2)}>¿Cual es vuestro plan a futuro?</h2>
@@ -38,8 +38,12 @@ const FAQ=()=>{
                     {isOpen === 3 && <p>Lo que más destaca de nuestro proyecto es nuestra dedicación a ofrecer una experiencia única a la hora de aparender a bpxear,ya que por el momento no existe como tal una app,que cuente cuente con varias rutinas y ejercicios de distintas categorias</p>}
                 </div>
                    <div className={`faq-item${isOpen === 4 ? ' faq-item--open' : ''}`}>
-                    <h2 onClick={() => handleFAQ(4)}>¿Qué es lo que más destaca de vuestro proyecto?</h2>
-                    {isOpen === 4 && <p>Lo que más destaca de nuestro proyecto es nuestra dedicación a ofrecer una experiencia única a la hora de aparender a bpxear,ya que por el momento no existe como tal una app,que cuente cuente con varias rutinas y ejercicios de distintas categorias</p>}
+                    <h2 onClick={() => handleFAQ(4)}>¿Cómo funciona el sistema de puntos y rangos?</h2>
+                    {isOpen === 4 && <p>Cada sesión completada suma puntos de ranking, con un bonus extra según las calorías quemadas. Además se lleva una racha de días consecutivos entrenando, y perderla penaliza la puntuación. Con esos puntos el usuario va subiendo de rango entre bronce, plata y oro, y compite con el resto de la comunidad en un ranking global.</p>}
+                </div>
+                   <div className={`faq-item${isOpen === 6 ? ' faq-item--open' : ''}`}>
+                    <h2 onClick={() => handleFAQ(6)}>¿Cómo se inicia sesión en la app?</h2>
+                    {isOpen === 6 && <p>Hay dos vías: registro clásico con email y contraseña, que se guarda hasheada con bcrypt y nunca en texto plano, o inicio de sesión con Google. En ambos casos el backend emite un token JWT que la app envía en cada petición, y un middleware lo verifica antes de dar acceso a cualquier ruta privada.</p>}
                 </div>
                    <div className={`faq-item${isOpen === 5 ? ' faq-item--open' : ''}`}>
                     <h2 onClick={() => handleFAQ(5)}>¿De qué se ha encargado cada uno?</h2>
