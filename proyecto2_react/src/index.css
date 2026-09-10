@@ -1,42 +1,79 @@
+/* ============================================================
+   GoFight · Sistema de diseño
+   Todo el portal parte de estos tokens: si hay que cambiar el
+   color de marca o el ritmo de espaciado, se toca solo aquí.
+   ============================================================ */
+
 :root {
-  --text: #ffc1c7;
-  --text-h: #ff3b4f;
-  --bg: #050505;
-  --border: rgba(255, 59, 79, 0.32);
-  --code-bg: #131313;
-  --accent: #ff3b4f;
-  --accent-bg: rgba(255, 59, 79, 0.14);
-  --accent-border: rgba(255, 59, 79, 0.62);
-  --social-bg: rgba(255, 59, 79, 0.08);
-  --shadow:
-    rgba(255, 59, 79, 0.18) 0 0 20px, rgba(0, 0, 0, 0.45) 0 8px 18px;
+  /* --- Marca --- */
+  --brand: #ff2f43;
+  --brand-soft: #ff6472;
+  --brand-deep: #c60f24;
+  --brand-glow: rgba(255, 47, 67, 0.35);
 
-  --sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* --- Fondos y superficies --- */
+  --ink: #08090b;
+  --ink-2: #0b0d10;
+  --surface: rgba(255, 255, 255, 0.032);
+  --surface-2: rgba(255, 255, 255, 0.055);
+  --surface-solid: #101317;
 
-  font: 17px/150% var(--sans);
-  letter-spacing: 0.18px;
+  /* --- Líneas --- */
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --line-brand: rgba(255, 47, 67, 0.42);
+
+  /* --- Texto: neutro para leer, rojo solo para acentuar --- */
+  --fg: #f4f5f7;
+  --fg-muted: #a8aeb9;
+  --fg-dim: #757c88;
+
+  /* --- Sombras --- */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 28px 60px rgba(0, 0, 0, 0.55);
+
+  /* --- Radios --- */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* --- Tipografía --- */
+  --display: 'Anton', 'Segoe UI', Impact, sans-serif;
+  --sans: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  /* --- Alto del header pegajoso (lo usan scroll-padding y el aside) --- */
+  --header-h: 74px;
+
+  /* Compatibilidad con estilos antiguos que aún referencian estas variables */
+  --text: var(--fg);
+  --text-h: var(--brand);
+  --bg: var(--ink);
+  --border: var(--line);
+  --accent: var(--brand);
+  --accent-bg: rgba(255, 47, 67, 0.1);
+  --accent-border: var(--line-brand);
+
+  font: 400 16px/1.6 var(--sans);
   color-scheme: dark;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--fg);
+  background: var(--ink);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-html,
-body {
-  scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
 }
 
 html {
-  scroll-padding-top: 120px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 20px);
 }
 
 @media (max-width: 768px) {
@@ -45,67 +82,184 @@ html {
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   min-height: 100svh;
-  color: var(--text);
+  color: var(--fg);
   background:
-    radial-gradient(circle at 12% -8%, rgba(255, 59, 79, 0.18), transparent 32%),
-    radial-gradient(circle at 88% 0%, rgba(255, 59, 79, 0.12), transparent 28%),
-    linear-gradient(180deg, #040404 0%, #090909 48%, #101010 100%);
+    radial-gradient(1200px 600px at 12% -10%, rgba(255, 47, 67, 0.13), transparent 60%),
+    radial-gradient(900px 500px at 92% 4%, rgba(255, 47, 67, 0.08), transparent 60%),
+    var(--ink);
 }
 
 #root {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  text-align: center;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
 h1,
 h2,
-h3 {
-  color: var(--text-h);
+h3,
+h4 {
   margin: 0;
-  font-family: var(--heading);
+  color: var(--fg);
+  line-height: 1.18;
+  text-wrap: balance;
 }
 
 p {
   margin: 0;
+  text-wrap: pretty;
 }
 
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* Foco visible y consistente en todo el portal */
+:focus-visible {
+  outline: 2px solid var(--brand-soft);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Barra de scroll a juego con el tema */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 47, 67, 0.45) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: var(--r-pill);
+  background: rgba(255, 47, 67, 0.42) padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 47, 67, 0.62) padding-box;
+}
+
+/* ─── Utilidades compartidas ─────────────────────────────────── */
+
+/* Etiqueta pequeña en versalitas que abre cada bloque */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--fg-dim);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sec, var(--brand));
+}
+
+/* Título de página (FAQ, Contacto) */
+.page_title {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--fg);
+  margin: 0;
+}
+
+.page_lede {
+  margin: 0.9rem 0 0;
+  max-width: 62ch;
+  color: var(--fg-muted);
+  font-size: clamp(0.98rem, 1.8vw, 1.08rem);
+  line-height: 1.65;
+}
+
+/* ─── Aparición al hacer scroll ──────────────────────────────── */
+/* Se resuelve con una animación y no con una transición a propósito: casi
+   todos estos bloques declaran su propio `transition` para el hover, y a
+   igualdad de especificidad el último archivo cargado ganaría. */
+[data-reveal] {
+  opacity: 0;
+}
+
+/* La marca la pone useScrollReveal como atributo, no como clase: el className
+   de estos bloques lo gestiona React y al re-renderizar borraría la clase. */
+[data-reveal][data-revealed] {
+  animation: revealIn 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* ─── Transición entre páginas ───────────────────────────────── */
 .page-transition {
   width: 100%;
   min-height: 100svh;
+  display: flex;
+  flex-direction: column;
   animation: pageFadeSlide 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes pageFadeSlide {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(18px) scale(0.985);
-    filter: blur(5px);
+    transform: translateY(14px);
   }
 
-  100% {
+  to {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
+    transform: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .page-transition {
     animation: none;
+  }
+
+  [data-reveal],
+  [data-reveal][data-revealed] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

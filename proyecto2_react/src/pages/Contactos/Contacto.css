@@ -1,221 +1,92 @@
-/* ─── Contacto Page ──────────────────────────────────────────── */
+/* ─── Página de contacto ─────────────────────────────────────── */
 
 .contacto-main {
+    width: min(100%, 1180px);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: clamp(3rem, 6vw, 5rem) 1.25rem clamp(4rem, 8vw, 6rem);
-    min-height: 70vh;
+    gap: clamp(1.6rem, 4vw, 2.6rem);
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 7vw, 5rem);
 }
 
-.contacto-title {
-    font-size: clamp(1.75rem, 4vw, 2.6rem);
-    font-weight: 800;
-    color: var(--text-h);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0 0 2.5rem;
-    position: relative;
+.contacto-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
 }
-
-.contacto-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    border-radius: 2px;
-    margin: 0.6rem auto 0;
-    box-shadow: 0 0 10px var(--accent);
-}
-
-/* ─── Content wrapper ─────────────────────────────────────────── */
 
 .contacto-grid {
-    width: 100%;
-    max-width: 1300px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-/* ─── Info panel ──────────────────────────────────────────────── */
-
-.contacto-info {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.5rem 1.6rem;
     display: grid;
-    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.6fr);
-    gap: 1.5rem 2.5rem;
-    align-items: stretch;
-    transition: border-color 0.25s, background 0.25s;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1rem, 2.5vw, 1.6rem);
+    align-items: start;
 }
 
-.contacto-info:hover {
-    border-color: var(--accent-border);
-    background: var(--accent-bg);
-}
-
-.contacto-info-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.contacto-info-text h2 {
-    margin: 0 0 0.6rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--text-h);
-}
-
-.contacto-info-text p {
-    margin: 0;
-    color: var(--text);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    opacity: 0.85;
-}
-
-/* ─── Contact columns ─────────────────────────────────────────── */
+/* ─── Tarjetas de las personas ───────────────────────────────── */
 
 .contacto-personas {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: clamp(1rem, 2.5vw, 1.6rem);
 }
-
-.contacto-persona {
-    min-width: 0;
-    padding: 1.1rem;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s, border-color 0.2s, background 0.2s;
-}
-
-.contacto-persona:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-border);
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.contacto-persona h3 {
-    margin: 0 0 0.9rem;
-    color: var(--text-h);
-    font-size: 1.05rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-/* ─── Links list ──────────────────────────────────────────────── */
-
-.contacto-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.75rem;
-}
-
-.contacto-links li {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-}
-
-.contacto-icon,
-.contacto-icon-img {
-    width: 1.45rem;
-    height: 1.45rem;
-    flex-shrink: 0;
-}
-
-.contacto-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-h);
-    font-size: 1rem;
-}
-
-.contacto-icon-img {
-    object-fit: contain;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.12));
-}
-
-.contacto-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-    overflow-wrap: anywhere;
-}
-
-.contacto-links a:hover {
-    color: var(--text-h);
-}
-
-/* ─── Form wrapper ────────────────────────────────────────────── */
-
-.contacto-form-wrapper {
-    width: 100%;
-}
-
-/* ─── Responsive ──────────────────────────────────────────────── */
-
-@media (max-width: 860px) {
-    .contacto-info {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 620px) {
-    .contacto-personas {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ─── Retratos de contacto ───────────────────────────────────── */
 
 .contacto-persona {
     position: relative;
     overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 1.3rem;
+    padding-right: clamp(8rem, 16vw, 11rem);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background:
+        radial-gradient(320px 200px at 92% 55%, rgba(255, 47, 67, 0.16), transparent 70%),
+        var(--surface);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contacto-persona:hover {
+    transform: translateY(-3px);
+    border-color: var(--line-brand);
+    box-shadow: var(--shadow-md);
 }
 
 .contacto-persona-content {
     position: relative;
     z-index: 2;
+    min-width: 0;
 }
 
-.contacto-persona--mario,
-.contacto-persona--ayoub {
-    min-height: 190px;
-    display: flex;
-    align-items: center;
-    padding-right: clamp(7.5rem, 12vw, 10rem);
-    background:
-        radial-gradient(circle at 92% 50%, rgba(255, 0, 0, 0.18), transparent 42%),
-        rgba(0, 0, 0, 0.15);
+.contacto-persona-rol {
+    color: var(--fg-dim);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
-.contacto-persona--mario::after,
-.contacto-persona--ayoub::after {
+.contacto-persona h2 {
+    margin: 0.25rem 0 0.9rem;
+    font-family: var(--display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--fg);
+}
+
+/* Círculo de fondo detrás del retrato */
+.contacto-persona::after {
     content: "";
     position: absolute;
     right: 1rem;
-    bottom: 0.65rem;
-    width: clamp(5.8rem, 9vw, 7.8rem);
-    height: clamp(5.8rem, 9vw, 7.8rem);
+    bottom: 0.7rem;
+    width: clamp(6rem, 10vw, 8rem);
+    height: clamp(6rem, 10vw, 8rem);
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--accent-border);
-    box-shadow: 0 0 24px rgba(255, 0, 0, 0.18);
+    border: 1px solid var(--line-brand);
+    box-shadow: 0 0 26px rgba(255, 47, 67, 0.16);
     z-index: 1;
 }
 
@@ -223,44 +94,114 @@
     position: absolute;
     right: 0.25rem;
     bottom: -0.3rem;
-    width: clamp(7.5rem, 13vw, 10rem);
+    width: clamp(7.5rem, 14vw, 10rem);
     max-height: 110%;
     object-fit: contain;
     z-index: 2;
-    filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.28));
+    filter: drop-shadow(0 0 16px rgba(255, 47, 67, 0.3));
     pointer-events: none;
     user-select: none;
     transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.contacto-persona--mario:hover .contacto-persona-img,
-.contacto-persona--ayoub:hover .contacto-persona-img {
+.contacto-persona:hover .contacto-persona-img {
     transform: translateY(-4px) scale(1.03);
-    filter: drop-shadow(0 0 18px rgba(255, 0, 0, 0.36));
+    filter: drop-shadow(0 0 22px rgba(255, 47, 67, 0.4));
 }
 
-@media (max-width: 860px) {
-    .contacto-persona--mario,
-    .contacto-persona--ayoub {
-        padding-right: clamp(8rem, 24vw, 11rem);
-    }
+/* ─── Silueta para quien todavía no tiene foto ───────────────── */
 
-    .contacto-persona-img {
-        width: clamp(8rem, 26vw, 10.5rem);
+/* Ocupa el mismo hueco que el círculo de fondo y se recorta dentro de él,
+   así el marcador de posición se lee como un avatar y no como una imagen rota */
+.contacto-persona-silueta {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.7rem;
+    z-index: 2;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    width: clamp(6rem, 10vw, 8rem);
+    height: clamp(6rem, 10vw, 8rem);
+    overflow: hidden;
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.28);
+    pointer-events: none;
+    user-select: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.contacto-persona-silueta svg {
+    width: 66%;
+    height: auto;
+    fill: currentColor;
+}
+
+.contacto-persona:hover .contacto-persona-silueta {
+    transform: translateY(-4px);
+    color: rgba(255, 120, 132, 0.5);
+}
+
+/* ─── Lista de enlaces ───────────────────────────────────────── */
+
+.contacto-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.contacto-links li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.contacto-icon-img {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+.contacto-links a {
+    color: var(--fg-muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contacto-links a:hover {
+    color: var(--brand-soft);
+    transform: translateX(2px);
+}
+
+/* ─── Formulario y opiniones ─────────────────────────────────── */
+
+.contacto-form-wrapper,
+.contacto-reviews {
+    width: 100%;
+}
+
+@media (max-width: 940px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 620px) {
-    .contacto-persona--mario,
-    .contacto-persona--ayoub {
-        min-height: 230px;
+    .contacto-persona {
+        min-height: 250px;
         align-items: flex-start;
-        padding-right: 1.1rem;
-        padding-bottom: 8.2rem;
+        padding-right: 1.2rem;
+        padding-bottom: 8.5rem;
     }
 
-    .contacto-persona--mario::after,
-    .contacto-persona--ayoub::after {
+    .contacto-persona::after {
         right: 50%;
         transform: translateX(50%);
         bottom: 0.75rem;
@@ -275,8 +216,23 @@
         width: 8.5rem;
     }
 
-    .contacto-persona--mario:hover .contacto-persona-img,
-    .contacto-persona--ayoub:hover .contacto-persona-img {
+    .contacto-persona-silueta {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 0.75rem;
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .contacto-persona:hover {
+        transform: none;
+    }
+
+    .contacto-persona:hover .contacto-persona-img {
         transform: translateX(50%) translateY(-4px) scale(1.03);
+    }
+
+    .contacto-persona:hover .contacto-persona-silueta {
+        transform: translateX(50%) translateY(-4px);
     }
 }
